@@ -1,0 +1,12 @@
+{
+  "temperatureOfPatient" : {
+    "denormalized" : 35.9
+  },
+  "occurrenceOfNausea" : "NO",
+  "lumbarPain" : "NO",
+  "urinePushing" : "YES",
+  "micturitionPains" : "YES",
+  "burningOfUrethra" : "YES",
+  "inflammationOfUrinaryBladder" : "YES",
+  "nephritisOfRenalPelvisOrigin" : "NO"
+}
