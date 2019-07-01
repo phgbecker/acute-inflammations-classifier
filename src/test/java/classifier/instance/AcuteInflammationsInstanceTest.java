@@ -16,7 +16,6 @@ public class AcuteInflammationsInstanceTest {
 
     @Before
     public void setUp() {
-        // 35.9,no,no,yes,yes,yes,yes,no
         acuteInflammationsInstance = new AcuteInflammationsInstance(
                 new TemperatureOfPatient(35.9),
                 OccurrenceOfNausea.NO,

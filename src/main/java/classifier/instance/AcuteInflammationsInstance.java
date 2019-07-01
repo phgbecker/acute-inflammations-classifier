@@ -61,7 +61,7 @@ public class AcuteInflammationsInstance {
             acuteInflamamtionsInstance.setValue(6, inflammationOfUrinaryBladder.getValue());
             acuteInflamamtionsInstance.setValue(7, nephritisOfRenalPelvisOrigin.getValue());
         } catch (NullPointerException e) {
-            throw new NullPointerException("Oops, an attribute has not been set. Setup the instance, and try again!");
+            throw new NullPointerException("Oops, an attribute has not been set. Setup the instance and try again!");
         }
 
         return acuteInflamamtionsInstance;
