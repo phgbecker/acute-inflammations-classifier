@@ -6,7 +6,5 @@
   "lumbarPain" : "NO",
   "urinePushing" : "YES",
   "micturitionPains" : "YES",
-  "burningOfUrethra" : "YES",
-  "inflammationOfUrinaryBladder" : "YES",
-  "nephritisOfRenalPelvisOrigin" : "NO"
+  "burningOfUrethra" : "YES"
 }

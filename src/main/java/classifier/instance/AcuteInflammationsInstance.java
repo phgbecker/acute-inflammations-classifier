@@ -27,8 +27,6 @@ public class AcuteInflammationsInstance {
     private UrinePushing urinePushing;
     private MicturitionPains micturitionPains;
     private BurningOfUrethra burningOfUrethra;
-    private InflammationOfUrinaryBladder inflammationOfUrinaryBladder;
-    private NephritisOfRenalPelvisOrigin nephritisOfRenalPelvisOrigin;
 
     public void serializeToJson(String fileName) throws IOException {
         ObjectMapper objectMapper = new ObjectMapper();
@@ -48,22 +46,20 @@ public class AcuteInflammationsInstance {
 
     @JsonIgnore
     public Instance getInstance(Instances dataSet) {
-        Instance acuteInflamamtionsInstance = new DenseInstance(8);
-        acuteInflamamtionsInstance.setDataset(dataSet);
+        Instance acuteInflammationsInstance = new DenseInstance(6);
+        acuteInflammationsInstance.setDataset(dataSet);
 
         try {
-            acuteInflamamtionsInstance.setValue(0, temperatureOfPatient.getNormalized());
-            acuteInflamamtionsInstance.setValue(1, occurrenceOfNausea.getValue());
-            acuteInflamamtionsInstance.setValue(2, lumbarPain.getValue());
-            acuteInflamamtionsInstance.setValue(3, urinePushing.getValue());
-            acuteInflamamtionsInstance.setValue(4, micturitionPains.getValue());
-            acuteInflamamtionsInstance.setValue(5, burningOfUrethra.getValue());
-            acuteInflamamtionsInstance.setValue(6, inflammationOfUrinaryBladder.getValue());
-            acuteInflamamtionsInstance.setValue(7, nephritisOfRenalPelvisOrigin.getValue());
+            acuteInflammationsInstance.setValue(0, temperatureOfPatient.getDenormalized());
+            acuteInflammationsInstance.setValue(1, occurrenceOfNausea.getValue());
+            acuteInflammationsInstance.setValue(2, lumbarPain.getValue());
+            acuteInflammationsInstance.setValue(3, urinePushing.getValue());
+            acuteInflammationsInstance.setValue(4, micturitionPains.getValue());
+            acuteInflammationsInstance.setValue(5, burningOfUrethra.getValue());
         } catch (NullPointerException e) {
             throw new NullPointerException("Oops, an attribute has not been set. Setup the instance and try again!");
         }
 
-        return acuteInflamamtionsInstance;
+        return acuteInflammationsInstance;
     }
 }

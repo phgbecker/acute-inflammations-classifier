@@ -22,9 +22,7 @@ public class AcuteInflammationsInstanceTest {
                 LumbarPain.NO,
                 UrinePushing.YES,
                 MicturitionPains.YES,
-                BurningOfUrethra.YES,
-                InflammationOfUrinaryBladder.YES,
-                NephritisOfRenalPelvisOrigin.NO
+                BurningOfUrethra.YES
         );
     }
 

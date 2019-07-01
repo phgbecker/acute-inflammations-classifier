@@ -15,6 +15,11 @@ public class ClassifierModel {
     private final AbstractClassifier classifier;
     private final Instances dataSet;
 
+    public ClassifierModel(AbstractClassifier classifier, Instances dataSet) {
+        this.classifier = classifier;
+        this.dataSet = dataSet;
+    }
+
     public ClassifierModel(String[] options, Instances dataSet) throws Exception {
         this.dataSet = dataSet;
         this.classifier = build(options, dataSet);
@@ -51,6 +56,10 @@ public class ClassifierModel {
         System.out.println(evaluation.toSummaryString());
         System.out.println(evaluation.toClassDetailsString());
         System.out.println(evaluation.toMatrixString());
+    }
+
+    public AbstractClassifier get() {
+        return classifier;
     }
 
     public void saveToFile(String fileName) throws Exception {
