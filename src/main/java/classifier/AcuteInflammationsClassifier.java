@@ -17,9 +17,9 @@ public class AcuteInflammationsClassifier {
         this.dataSet.setClassIndex(dataSet.numAttributes() - 1);
     }
 
-    public AcuteInflammationsClassifier loadModel(String modelFileName) throws Exception {
+    public AcuteInflammationsClassifier loadModel(String fileName) throws Exception {
         classifier = new ClassifierModel(
-                ClassifierModel.loadModelFrom(modelFileName),
+                ClassifierModel.loadModelFrom(fileName),
                 dataSet
         );
 
@@ -45,15 +45,26 @@ public class AcuteInflammationsClassifier {
         classifier.saveToFile(fileName);
     }
 
-    public void classifyInstance(String instanceFileName) throws Exception {
+    private Instance setUpInstance(AcuteInflammationsInstance acuteInflammationsInstance) {
+        Instance instance = acuteInflammationsInstance.getInstance(dataSet);
+
+        System.out.println();
+        System.out.print("INSTANCE: ");
+        System.out.println(instance);
+
+        return instance;
+    }
+
+    public void classifyInstance(String fileName) throws Exception {
+        AcuteInflammationsInstance inflammationsInstance = AcuteInflammationsInstance.deserializeFromJson(fileName);
+        Instance instance = setUpInstance(inflammationsInstance);
+        classifyInstance(instance);
+    }
+
+    private void classifyInstance(Instance instance) throws Exception {
         HashMap<Integer, String> diagnosisMap = new HashMap<>();
         diagnosisMap.put(0, "NEGATIVE");
         diagnosisMap.put(1, "POSITIVE");
-
-        AcuteInflammationsInstance inflammationsInstance = AcuteInflammationsInstance.deserializeFromJson(instanceFileName);
-        Instance instance = inflammationsInstance.getInstance(dataSet);
-        System.out.print("INSTANCE: ");
-        System.out.println(instance);
 
         System.out.println();
         System.out.println("CLASS: NEPHRITIS OF RENAL PELVIS ORIGIN");
