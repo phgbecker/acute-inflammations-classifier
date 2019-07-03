@@ -57,7 +57,7 @@ public class AcuteInflammationsInstance {
             acuteInflammationsInstance.setValue(4, micturitionPains.getValue());
             acuteInflammationsInstance.setValue(5, burningOfUrethra.getValue());
         } catch (NullPointerException e) {
-            throw new NullPointerException("Oops, an attribute has not been set. Setup the instance and try again!");
+            throw new NullPointerException("Oops, a attribute has not been set. Setup the instance and try again!");
         }
 
         return acuteInflammationsInstance;
